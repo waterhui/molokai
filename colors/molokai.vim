@@ -9,7 +9,7 @@
 "
 
 hi clear
-
+set t_Co=256 "告知molokai,终端支持256色.
 if version > 580
     " no guarantees for version 5.8 and below, but this makes it stop
     " complaining
@@ -31,10 +31,11 @@ hi Boolean         guifg=#AE81FF
 hi Character       guifg=#E6DB74
 hi Number          guifg=#AE81FF
 hi String          guifg=#E6DB74
+"Conditional代表语法中的高亮粉色
 hi Conditional     guifg=#F92672               gui=bold
 hi Constant        guifg=#AE81FF               gui=bold
-hi Cursor          guifg=#000000 guibg=#F8F8F0
-hi iCursor         guifg=#000000 guibg=#F8F8F0
+hi Cursor          guifg=#000000 guibg=#C5C8C6
+hi iCursor         guifg=#000000 guibg=#C5C8C6
 hi Debug           guifg=#BCA3A3               gui=bold
 hi Define          guifg=#66D9EF
 hi Delimiter       guifg=#8F8F8F
@@ -48,8 +49,8 @@ hi Error           guifg=#E6DB74 guibg=#1E0010
 hi ErrorMsg        guifg=#F92672 guibg=#232526 gui=bold
 hi Exception       guifg=#A6E22E               gui=bold
 hi Float           guifg=#AE81FF
-hi FoldColumn      guifg=#465457 guibg=#000000
-hi Folded          guifg=#465457 guibg=#000000
+hi FoldColumn      guifg=#465457 guibg=#272822
+hi Folded          guifg=#465457 guibg=#272822
 hi Function        guifg=#A6E22E
 hi Identifier      guifg=#FD971F
 hi Ignore          guifg=#808080 guibg=bg
@@ -66,8 +67,11 @@ hi MoreMsg         guifg=#E6DB74
 hi Operator        guifg=#F92672
 
 " complete menu
-hi Pmenu           guifg=#66D9EF guibg=#000000
-hi PmenuSel                      guibg=#808080
+" 补全列表颜色
+" 未选中列表颜色
+hi Pmenu           guifg=#C5C8C6 guibg=#6B6865
+" 选中列表颜色
+hi PmenuSel        guifg=#6B6865 guibg=#C5C8C6
 hi PmenuSbar                     guibg=#080808
 hi PmenuThumb      guifg=#66D9EF
 
@@ -101,36 +105,38 @@ hi Type            guifg=#66D9EF               gui=none
 hi Underlined      guifg=#808080               gui=underline
 
 hi VertSplit       guifg=#808080 guibg=#080808 gui=bold
-hi VisualNOS                     guibg=#403D3D
-hi Visual                        guibg=#403D3D
+"可视模式下的选中的颜色
+hi VisualNOS                     guibg=#6B6865
+hi Visual                        guibg=#6B6865
 hi WarningMsg      guifg=#FFFFFF guibg=#333333 gui=bold
-hi WildMenu        guifg=#66D9EF guibg=#000000
+hi WildMenu        guifg=#66D9EF guibg=#272822
 
-hi TabLineFill     guifg=#1B1D1E guibg=#1B1D1E
-hi TabLine         guibg=#1B1D1E guifg=#808080 gui=none
+hi TabLineFill     guifg=#272822 guibg=#272822
+hi TabLine         guibg=#272822 guifg=#272822 gui=none
 
 if s:molokai_original == 1
    hi Normal          guifg=#F8F8F2 guibg=#272822
    hi Comment         guifg=#75715E
-   hi CursorLine                    guibg=#3E3D32
+   hi CursorLine                    guibg=#49483E
    hi CursorLineNr    guifg=#FD971F               gui=none
-   hi CursorColumn                  guibg=#3E3D32
-   hi ColorColumn                   guibg=#3B3A32
+   hi CursorColumn                  guibg=#49483E
+   hi ColorColumn                   guibg=#49483E
    hi LineNr          guifg=#BCBCBC guibg=#3B3A32
    hi NonText         guifg=#75715E
    hi SpecialKey      guifg=#75715E
 else
-   hi Normal          guifg=#F8F8F2 guibg=#1B1D1E
+"Normal颜色改成了灰白色
+   hi Normal          guifg=#C5C8C6 guibg=#272822 
    hi Comment         guifg=#7E8E91
-   hi CursorLine                    guibg=#293739
+   hi CursorLine                    guibg=#49483E
    hi CursorLineNr    guifg=#FD971F               gui=none
-   hi CursorColumn                  guibg=#293739
+   hi CursorColumn                  guibg=#49483E
    hi ColorColumn                   guibg=#232526
-   hi LineNr          guifg=#465457 guibg=#232526
+   "修改行号颜色
+   hi LineNr          guifg=#465457 guibg=#272822
    hi NonText         guifg=#465457
    hi SpecialKey      guifg=#465457
 end
-
 "
 " Support for 256-color terminal
 "
